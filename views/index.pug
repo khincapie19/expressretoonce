@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  a(href="/register") Registrarse
+  div
+    table(style='width:50%', border='1px solid black')
+      thead
+        tr
+          th Name
+          th Email
+      tbody 
+      each record in records
+        tr
+          td #{record.name}
+          td #{record.email}
+        
+    

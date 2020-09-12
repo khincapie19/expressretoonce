@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  form(action="/register", method="post")
+    label(for="name") Nombre
+    br
+    input(type="text" id="name" name="name")
+    br
+    label(for="email") Email
+    br
+    input(type="text" id="email" name="email")
+    br
+    label(for="password") Contraseña
+    br
+    input(type="text" id="password" name="password")
+    br
+    button(type="submit") Registrarse
