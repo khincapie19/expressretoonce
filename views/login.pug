@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  if loggedIn
+    p Ya has iniciado sesión
+    a(href="/") Volver a la tabla
+    br
+    a(href="/logout") Logout
+    
+  else     
+    div(class="auth-page expand")
+      div(class="card")
+        div(class="card-header")
+        if error
+          p= error         
+        form(action="/login", method="post")
+          div(class="card-body")
+            div(class="form-group")
+              label(for="email") Email
+              br
+              input(type="text", id="email", name="email")
+            div(class="form-group")  
+              label(for="password") Contraseña
+              br
+              input(type="password", name="password")
+        
+          div(class="card-footer")
+            div(class="small")    
+              a(href="/register") Registrarse
+              button(type="submit") Ingresar
+    
