@@ -5,7 +5,7 @@ const Record = require("./models/record");
 const User = require("./models/User");
 const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser");
-mongoose.connect("mongodb://localhost:27017/records", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/mongo-1', { useNewUrlParser: true });
 
 app.set("view engine", "pug");// configuraciòn para unir con pug
 app.set("views", "views"); //  decimos donde queremos guardar esos archivos
