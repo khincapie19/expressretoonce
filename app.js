@@ -59,7 +59,7 @@ app.get('/', async(req, res) => {
   const users = await User.find();
   const loggedIn = req.cookies["express:sess"];
 
-  res.render("login", { users, loggedIn })
+  res.render("index", { users, loggedIn })
 });
 
 app.get("/login", (req, res) =>{
@@ -74,7 +74,7 @@ app.post("/login", async (req, res) =>{
       req.session.userId = user.Id;
       return res.redirect("/");
     } else {
-      res.render("/login", { error: "Wrong email or password. Try again!"});
+      res.render("login", { error: "Wrong email or password. Try again!"});
     }
   } catch (err) {
     return next(err);
