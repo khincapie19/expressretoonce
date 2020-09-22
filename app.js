@@ -74,7 +74,7 @@ app.post("/login", async (req, res) =>{
       req.session.userId = user.Id;
       return res.redirect("/");
     } else {
-      res.render("login", { error: "Wrong email or password. Try again!"});
+      res.render("/login", { error: "Wrong email or password. Try again!"});
     }
   } catch (err) {
     return next(err);
