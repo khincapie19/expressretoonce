@@ -49,7 +49,7 @@ app.post('/register', async (req, res, next) => {
       email: req.body.email,
       password: req.body.password
     });
-    res.redirect("/login");
+    res.redirect("/");
   } catch(e) {
     return next(e);
   }
