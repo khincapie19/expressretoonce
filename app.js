@@ -18,12 +18,12 @@ app.use(cookieParser());
 
 //app.use("/static", express.static("public"));
 
-const requireUser = (req, res, next) => {
-  if (!res.locals.user) {
-    return res.redirect("/login");
-  }
-  next();
-};
+// const requireUser = (req, res, next) => {
+//   if (!res.locals.user) {
+//     return res.redirect("/login");
+//   }
+//   next();
+// };
 
 app.use(async (req, res, next) => {
   const userId = req.session.userId;
